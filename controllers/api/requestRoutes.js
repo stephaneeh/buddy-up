@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Request } = require('../models');
+const { Request } = require('../../models');
 
 router.get('/:game', async (req, res) => {
   try {
