@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const {User, Game } = require("../models");
 
 class Review extends Model {}
 
@@ -34,14 +33,6 @@ Review.init(
         stars: {
             type: DataTypes.INTEGER,
         },
-        // game: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     references:{ 
-        //         Model: Game,
-        //         key: 'id',
-        //     }
-        // },
     },
     {sequelize,
         timestamps: false,

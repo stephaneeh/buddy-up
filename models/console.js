@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const { User, Game } = require("../models");
 
 class Console extends Model {}
 
@@ -23,13 +22,6 @@ Console.init(
               key: 'id',
             },
         },
-        // game_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: Game,
-        //         key: 'id',
-        //     },
-        // }
     },
     {sequelize,
         timestamps: false,
