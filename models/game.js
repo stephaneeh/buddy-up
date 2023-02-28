@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const {Game, Console, Review } = require("../models");
+const {Console, Review, Genre } = require("../models");
 
 class Game extends Model {}
 
@@ -20,7 +20,7 @@ Game.init(
             type: DataTypes.STRING,
             allowNull: false,
             references:{ 
-                model: Game,
+                model: Genre,
                 key: 'id',
             }
         },
