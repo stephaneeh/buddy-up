@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 const User = require('./user');
 const Game = require('./Game');
 const Genre = require('./Genre');
@@ -78,3 +81,4 @@ Request.belongsTo(Console, {
 });
 
 module.exports = { User, Game, Genre, Request, Console, Review};
+>>>>>>> 04c0ef296fd9f14a299c0243f8c2bd3232d9cb53
