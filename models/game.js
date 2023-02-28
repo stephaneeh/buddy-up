@@ -35,7 +35,7 @@ Game.init(
         review: {
             type: DataTypes.STRING,
             references:{ 
-                model: Console,
+                model: Review,
                 key: 'id',
             }
         },
