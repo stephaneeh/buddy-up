@@ -1,7 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
-const {Game, Console } = require("../models");
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -36,20 +35,20 @@ User.init(
             len: [8],
       },
     },
-    fav_genre: {
-        type: DataTypes.STRING,
-        references:{ 
-            model: Game,
-            key: 'id',
-        }
-    },
-    console: {
-        type: DataTypes.STRING,
-        references:{ 
-            model: Console,
-            key: 'id',
-        }
-    },
+    // fav_genre: {
+    //     type: DataTypes.STRING,
+    //     references:{ 
+    //         model: Genre,
+    //         key: 'id',
+    //     }
+    // },
+    // console: {
+    //     type: DataTypes.STRING,
+    //     references:{ 
+    //         model: Console,
+    //         key: 'id',
+    //     }
+    // },
   },
   {
     hooks: {

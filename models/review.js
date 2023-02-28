@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const {User, Game, } = require("../models");
+const {User, Game } = require("../models");
 
 class Review extends Model {}
 
@@ -16,22 +16,32 @@ Review.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        user_name: {
-            type: DataTypes.STRING,
+        user_id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             references:{
                 Model: User,
                 key: 'id',
             }
         },
-        game: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references:{ 
-                Model: Game,
+        game_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: Game,
                 key: 'id',
-            }
+            },
         },
+        stars: {
+            type: DataTypes.INTEGER,
+        },
+        // game: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     references:{ 
+        //         Model: Game,
+        //         key: 'id',
+        //     }
+        // },
     },
     {sequelize,
         timestamps: false,

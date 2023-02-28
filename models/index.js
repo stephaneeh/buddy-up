@@ -10,8 +10,8 @@ User.hasOne(Game, {
   onDelete: 'CASCADE'
 });
 
-Game.belongsToMany(User, {
-  foreignKey: 'user_id'
+Game.hasMany(User, {
+  foreignKey: 'user_id',
 });
 
 User.hasOne(Console, {
@@ -19,7 +19,7 @@ User.hasOne(Console, {
   onDelete: 'CASCADE'
 });
 
-Console.belongsToMany(User, {
+Console.hasMany(User, {
   foreignKey: 'user_id'
 });
 
@@ -37,7 +37,7 @@ Game.hasMany(Genre, {
     onDelete: 'CASCADE'
 });
 
-Genre.belongsToMany(Game, {
+Genre.hasMany(Game, {
     foreignKey: 'game_id'
 });
 
@@ -46,7 +46,7 @@ Game.hasMany(Console, {
     onDelete: 'CASCADE'
 });
 
-Console.belongsToMany(Game, {
+Console.hasMany(Game, {
     foreignKey: 'game_id'
 });
 
@@ -59,22 +59,31 @@ Review.belongsTo(Game, {
     foreignKey: 'game_id'
 });
 
+User.hasMany(Review, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Review.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
 Game.hasMany(Request, {
-    foreignKey: 'game_id',
+    foreignKey: 'req_game',
     onDelete: 'CASCADE'
 });
 
 Request.belongsTo(Game, {
-    foreignKey: 'game_id'
+    foreignKey: 'req_game'
 });
 
 Console.hasMany(Request, {
-    foreignKey: 'console_id',
+    foreignKey: 'req_console',
     onDelete: 'CASCADE'
 });
 
 Request.belongsTo(Console, {
-    foreignKey: 'console_id'
+    foreignKey: 'req_console'
 });
 
-module.exports = { User, Game, Genre, Request, Console, Review};
+module.exports = { User, Game, Console, Request, Genre, Review };
