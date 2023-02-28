@@ -42,6 +42,12 @@ Game.init(
         stars: {
             type: DataTypes.INTEGER,
         },
+    },
+    {sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "game",
     }
 );
 
