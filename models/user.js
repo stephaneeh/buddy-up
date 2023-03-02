@@ -35,20 +35,14 @@ User.init(
             len: [8],
       },
     },
-    // fav_genre: {
-    //     type: DataTypes.STRING,
-    //     references:{ 
-    //         model: Genre,
-    //         key: 'id',
-    //     }
-    // },
-    // console: {
-    //     type: DataTypes.STRING,
-    //     references:{ 
-    //         model: Console,
-    //         key: 'id',
-    //     }
-    // },
+    game_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game',
+        key: 'id',
+      },
+    }
+
   },
   {
     hooks: {

@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const {User, Game } = require("../models");
+const { Game } = require("../models");
 
 
 class Genre extends Model {}
@@ -17,13 +17,6 @@ Genre.init(
           type: DataTypes.STRING,
           allowNull: false,
       },
-    //   user_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //       model: User,
-    //       key: 'id',
-    //     },
-    // },
     game_id: {
         type: DataTypes.INTEGER,
         references: {
