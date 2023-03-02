@@ -1,0 +1,20 @@
+[
+    {
+        "content": "I am new to gaming but this is great! Interesting plot, great characters, unique missions.",
+        "game_id": "1",
+        "user_id": "1",
+        "stars": "5"
+    },
+    {
+        "content": "This is such a great game. I love being able to create my own world. Love it!",
+        "game_id": "2",
+        "user_id": "2",
+        "stars": "5"
+    },
+    {
+        "content": "My son plays this game. He loves it but I recommend the monitoring and dealing with any issues as they arrise.",
+        "game_id": "3",
+        "user_id": "3",
+        "stars": "3"
+    }
+]
