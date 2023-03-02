@@ -6,17 +6,16 @@ const gameData = require("./gameData.json");
 const genreData = require("./genreData.json");
 const requestData = require("./requestData.json");
 const console_data = require("./consoleData.json");
-// const reviewData = require('./reviewData.json');
+const reviewData = require("./reviewData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await User.bulkCreate(userData, {
-    individualHooks: true,
+  await Console.bulkCreate(console_data, {
     returning: true,
   });
 
-  console.log("--------------User DATA SEEDED--------------");
+  console.log("--------------Console DATA SEEDED--------------");
 
   await Game.bulkCreate(gameData, {
     returning: true,
@@ -30,11 +29,12 @@ const seedDatabase = async () => {
 
   console.log("--------------Genre DATA SEEDED--------------");
 
-  await Console.bulkCreate(console_data, {
+  await User.bulkCreate(userData, {
+    individualHooks: true,
     returning: true,
   });
 
-  console.log("--------------Console DATA SEEDED--------------");
+  console.log("--------------User DATA SEEDED--------------");
 
   await Request.bulkCreate(requestData, {
     returning: true,
@@ -42,9 +42,11 @@ const seedDatabase = async () => {
 
   console.log("--------------Request DATA SEEDED--------------");
 
-  //   await Review.bulkCreate(reviewData, {
-  //     returning: true,
-  //   });
+  await Review.bulkCreate(reviewData, {
+    returning: true,
+  });
+
+  console.log("--------------Review DATA SEEDED--------------");
 
   process.exit(0);
 };
