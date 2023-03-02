@@ -15,18 +15,17 @@ Review.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                Model: User,
-                key: 'id',
-            }
-        },
         game_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: Game,
+                model: 'game',
+                key: 'id',
+            },
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
                 key: 'id',
             },
         },

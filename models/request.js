@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const { Game, User } = require('../models');
 
 
 class Request extends Model {}
@@ -13,19 +12,24 @@ Request.init(
             primaryKey: true,
             autoIncrement: true,
         },
-
-        req_game: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            references:{ 
-                Model: Game,
-                key: 'id',
-            }
-        },
         user_id: {
             type: DataTypes.INTEGER, 
             references: {
-                model: User,
+                model: 'user',
+                key: 'id',
+            },
+        },
+        game_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model: 'game',
+                key: 'id',
+            },
+        },
+        console_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model: 'console',
                 key: 'id',
             },
         },
