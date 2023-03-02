@@ -35,6 +35,14 @@ User.init(
             len: [8],
       },
     },
+    game_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'game',
+        key: 'id',
+      },
+    }
+
   },
   {
     hooks: {

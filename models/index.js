@@ -6,12 +6,11 @@ const Game = require('./Game');
 // const Review = require('./Review');
 
 User.belongsTo(Game, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: 'game_id',
 });
 
 Game.hasMany(User, {
-  foreignKey: 'user_id',
+  foreignKey: 'game_id',
 });
 
 // User.hasOne(Console, {
@@ -24,12 +23,12 @@ Game.hasMany(User, {
 // });
 
 // User.hasMany(Request, {
-//     foreignKey: 'user_id',
+//     foreignKey: 'request_id',
 //     onDelete: 'CASCADE'
 // });
 
 // Request.belongsTo(User, {
-//     foreignKey: 'user_id',
+//     foreignKey: 'request_id',
 // });
 
 // Game.hasMany(Genre, {
@@ -86,4 +85,4 @@ Game.hasMany(User, {
 //     foreignKey: 'req_console'
 // });
 
-module.exports = { User, Game };
+module.exports = { User, Game};

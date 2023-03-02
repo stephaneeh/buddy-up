@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const { Game, User } = require('../models');
 
 
 class Request extends Model {}
@@ -18,14 +19,6 @@ Request.init(
             allowNull: false,
             references:{ 
                 Model: Game,
-                key: 'id',
-            }
-        },
-        req_console: {
-            type: DataTypes.STRING,
-            allowNull: false, //required?
-            references:{ 
-                Model: Console,
                 key: 'id',
             }
         },
