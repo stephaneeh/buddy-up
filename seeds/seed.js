@@ -5,7 +5,7 @@ const userData = require("./userData.json");
 const gameData = require("./gameData.json");
 const genreData = require("./genreData.json");
 // const requestData = require('./requestData.json');
-// const console_data = require('./console_data.json');
+const console_data = require("./consoleData.json");
 // const reviewData = require('./reviewData.json');
 
 const seedDatabase = async () => {
@@ -29,13 +29,16 @@ const seedDatabase = async () => {
   });
 
   console.log("--------------Genre DATA SEEDED--------------");
+
   //   await Request.bulkCreate(requestData, {
   //     returning: true,
   //   });
 
-  //   await Console.bulkCreate(console_data, {
-  //     returning: true,
-  //   });
+  await Console.bulkCreate(console_data, {
+    returning: true,
+  });
+
+  console.log("--------------Console DATA SEEDED--------------");
 
   //   await Review.bulkCreate(reviewData, {
   //     returning: true,
