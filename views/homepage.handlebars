@@ -1,5 +1,5 @@
 <!-- Loop over each object in the games? array -->
-{{#each games as |game| }}
+{{!-- {{#each games as |game| }}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{game.name}}</h5>
@@ -10,4 +10,44 @@
     <a href="#" class="card-link">Another link</a>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
+
+{{!-- <template id="card-template"> --}}
+   <!-- Loop over each object in the games? array -->
+   {{#each games as |game| }}
+   {{!-- each card is the link to open a modal --}}
+   <div class="card" style="width: 18rem;" data-toggle="modal" data-target="#myModal{{@index}}">
+      <div class="card-body">
+         <img class="card-img-top" src="{{image}}" alt="Card image cap">
+         <h5 class="card-title">{{game.name}}</h5>
+         <p class="card-text">{{game.console.name}}</p>
+         <p class="card-text">{{game.review.stars}}</p>
+         <h6 class="card-subtitle mb-2 text-muted">{{game.genre.name}}</h6>
+      </div>
+   </div>
+   {{/each}}
+   <!-- Modal -->
+   <div class="modal fade" id="myModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+         <div class="modal-content">
+            <div class="modal-header bg-light">
+               <h5 class="modal-title" id="exampleModalLabel">{{game.name}}</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <img class="card-img-top" src="{{image}}" alt="Card image cap">
+               <p class="card-text">{{game.console.name}}</p>
+               <h6 class="card-subtitle mb-2 text-muted">{{game.genre.name}}</h6>
+               <p class="card-text">{{game.review.stars}}</p>
+            </div>
+            <div class="modal-footer bg-light">
+               <button type="button" class="btn  btn-outline-secondary">Find Buddy</button>
+               <button type="button" class="btn  btn-outline-secondary">Create New</button>
+            </div>
+         </div>
+      </div>
+   </div>
+{{!-- </template> --}}
