@@ -42,6 +42,8 @@ router.post('/', async (req, res) => {
       user_name: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      game_id: req.body.game_id,
+      console_id: req.body.console_id,
     });
 
     req.session.save(() => {
