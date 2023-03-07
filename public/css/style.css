@@ -1,94 +1,27 @@
-/* :root {
-
-} */
-
-
-body {
-    font-family: sans-serif;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
-    /* background-color: */
+:root {
+    --main-pink: #f6042c;
+    --secondary: #6a6a6a;
 }
 
-
-header {
-    padding: 40px;
-    text-align: center;
-    background: #acd551;
-    color: #e3e4e3; 
+h1 {
+    font-family:'Courier New', Courier, monospace;
+    color: var(--main-pink);
 }
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-.btn {
-    border: none;
-    padding: 0;
-    cursor: pointer;
+nav a { 
+    color: white;
     text-decoration: none;
-    font-size: 100%;
-    background: none;
-    /* transition */
-    margin-left: 10px;
-}
-
-/* .btn:hover {
-
-} */
-
-
-
-/* CARDS */
-
-.login-card {
-    margin: 0 0 20px 0;
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 5px;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
-    border-style: double;
-    border-width: thick;
-    background-color: #2f3994;
-    color: var(--light);
-}
-
-/* .login-card:hover{
-
-} */
-
-.card header {
-    color: aquamarine;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0;
-    /* background-color: ; */
-    padding: 0.625rem;
-    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-
-.card-body {
-    font-size: 1.4rem;
-    text-align: center;
-    font-weight: bold;
+ }
+  
+a:hover {
+    color: rgb(0, 100, 100);
+    
   }
 
-
-.nav {
-    display: flex;
-    background-color: #64d679;
+.button {
+    background-color: var(--secondary);
+    color: white;
 }
-
-nav a {    
-    color: #eac24b;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-}
-
+.button:hover {
+    background-color: var(--main-pink);
+    color: white;
+  }
