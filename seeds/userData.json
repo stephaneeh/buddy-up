@@ -2,30 +2,22 @@
     {
       "user_name": "Bugs",
       "email": "bugs@hotmail.com",
-      "password": "password12345",
-      "game_id": "1",
-      "console_id": "1"
+      "password": "password12345"
     },
     {
       "user_name": "Daffy",
       "email": "daffy@gmail.com",
-      "password": "password12345",
-      "game_id": "2",
-      "console_id": "2"
+      "password": "password12345"
     },
     {
       "user_name": "Sylvester",
       "email": "sylvester2k20@aol.com",
-      "password": "password12345",
-      "game_id": "3",
-      "console_id": "3"
+      "password": "password12345"
     },
     {
       "user_name": "Tweety",
       "email": "tweety@msn.com",
-      "password": "password12345",
-      "game_id": "1",
-      "console_id": "3"
+      "password": "password12345"
     }
   ]
     

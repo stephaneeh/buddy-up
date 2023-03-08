@@ -31,25 +31,25 @@ Request.belongsTo(User, {
 
 Game.belongsToMany(Genre, {
   through: "GenreGame",
-  as: "game",
+  // as: "game",
   foreignKey: "game_id",
 });
 
 Genre.belongsToMany(Game, {
   through: "GenreGame",
-  as: "genre",
+  // as: "genre",
   foreignKey: "genre_id",
 });
 
 Game.belongsToMany(Console, {
   through: "ConsoleGame",
-  as: "console",
+  // as: "console",
   foreignKey: "game_id",
 });
 
 Console.belongsToMany(Game, {
   through: "ConsoleGame",
-  as: "game",
+  // as: "gameConsole",
   foreignKey: "console_id",
 });
 
@@ -63,7 +63,7 @@ Review.belongsTo(Game, {
 
 User.hasMany(Review, {
   foreignKey: "user_id",
-  onDelete: 'CASCADE'
+  onDelete: "CASCADE",
 });
 
 Review.belongsTo(User, {
