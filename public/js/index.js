@@ -1,3 +1,15 @@
+async function getGames() {
+  const getGames = await fetch("/", {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
+  });
+  console.log(getGames);
+}
+
+getGames();
+
+console.log("im working");
+
 const options = {
   bottom: "64px", // default: '32px'
   right: "unset", // default: '32px'
@@ -14,18 +26,6 @@ const options = {
 
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
-
-async function getGames() {
-  const getGames = await fetch("/api/games", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
-  console.log(getGames);
-}
-
-getGames();
-
-console.log("im wokring");
 
 // const get = await fetch ('/api/users/login', {
 //     method: 'POST',
