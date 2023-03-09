@@ -35,6 +35,21 @@ h1 {
 }
 /* -------- End NavBar Config -------- */
 
+/* -------- Card Config -------- */
+.card {
+  margin: 10px;
+  width: 12rem;
+  height: 10rem;
+  background-position: center;
+  transition: width 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.card:hover {
+  opacity: 0.5;
+}
+
+/* TODO: Add hover effects for card title to show/hide */
 
 
 /* -------- Body Button Config -------- */
