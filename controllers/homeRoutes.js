@@ -2,6 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { Game } = require("../models");
 
+
 // the withauth middleware checks whether the use is logged in before proceeding
 router.get("/", withAuth, async (req, res) => {
   try {
