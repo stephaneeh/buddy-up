@@ -1,3 +1,4 @@
+{{!-- Find a Buddy Form --}}
 <div class="col-md-6">
     <h2>Find A Buddy</h2>
 
@@ -15,6 +16,7 @@
         <label for="game-signup">Choose the game:</label>
         <select name="game-signup" class="form-control" id="game-signup">
           {{!-- <option value="0"></option> --}}
+          {{!-- value = game id. name = game name --}}
           <option value="1">Modern Warfare 2</option>
           <option value="2">Minecraft</option>
           <option value="3">Fortnite</option>
@@ -37,15 +39,31 @@
           <option value="20">Tony Hawks Pro Skater 2</option>  
         </select>      
       </div>
-      <div class="form-group">
+      {{!-- <div class="form-group">
         <label class="date-time" for="meeting-time">Date and time:</label>
         <input type="datetime-local" id="meeting-time"
         name="meeting-time" value="2023-03-07T19:30"
         min="2023-03-07T00:00" max="2026-03-30T00:00">
-      </div>
+      </div> --}}
       <hr>
       <div class="form-group">
         <button class="btn btn-secondary" type="submit">Find me a buddy</button>
       </div>
     </form>
   </div>
+
+{{!-- Find a Buddy Results --}}
+
+
+<div class="col-md-6" id="findabuddy-results">
+{{!-- Current Blog Posts (if there are any created)--}}
+{{#if buddies.length}}
+  <div class="col-md-6 buddy-list">
+    <h3>Current Re:</h3>
+  {{else}}
+    <p>Fill out the form and see who you can buddy up with!</p>
+
+  
+{{/if}}
+
+</div>
