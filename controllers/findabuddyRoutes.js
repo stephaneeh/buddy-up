@@ -36,7 +36,24 @@ router.get("/", withAuth, async (req, res) => {
       logged_in: true,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
+  }
+});
+
+// DESCRIPTION: Creating a new find a buddy request
+router.post("/", withAuth, async (req, res) => {
+  try {
+    const newBuddyReq = await Request.create({
+      game_id: req.session.game,
+      console_id: req.body.console,
+      // date: req.body.dateTime,
+    });
+
+    res.status(200).json(newBuddyReq);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
   }
 });
 
