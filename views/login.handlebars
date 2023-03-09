@@ -13,7 +13,7 @@
       </div>
       <hr>
       <div class="form-group">
-        <button class="btn btn-secondary" type="submit">Login</button>
+        <button class="btn" type="submit">Login</button>
       </div>
     </form>
   </div>
@@ -47,6 +47,9 @@
       <div class="form-group">
         <label for="game-signup">Favourite Game:</label>
         <select name="game-signup" class="form-control" id="game-signup">
+          {{!-- {{#each games as |game| }}
+          <option value="2">{{game.name}}</option>
+          {{/each}} --}}
           {{!-- <option value="0"></option> --}}
           <option value="1">Modern Warfare 2</option>
           <option value="2">Minecraft</option>
@@ -67,12 +70,12 @@
           <option value="17">The Wticher 3: Wild Hunt</option>
           <option value="18">World of Warcraft</option>
           <option value="19">Halo 2</option>
-          <option value="20">Tony Hawks Pro Skater 2</option>  
-        </select>      
+          <option value="20">Tony Hawks Pro Skater 2</option>
+        </select>
       </div>
       <hr>
       <div class="form-group">
-        <button class="btn btn-secondary" type="submit">Sign up</button>
+        <button class="btn" type="submit">Sign up</button>
       </div>
     </form>
   </div>
