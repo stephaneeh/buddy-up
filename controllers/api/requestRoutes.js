@@ -19,11 +19,12 @@ router.get("/:game", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newReq = await Request.create({
-      username: req.session.username,
-      email: req.session.email,
-      game: req.params.game,
-      date: req.params.date,
-      console: req.params.console,
+        username: req.session.username,
+        email: req.session.email,
+        game: req.params.game,
+        date: req.params.date,
+        // console: req.params.console,
+
     });
 
     res.json("Your Buddy Request has been created");
