@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Request } = require('../../models');
 
-router.get('/game', async (req, res) => {
+router.get('/:game', async (req, res) => {
   try {
     const buddyReqs = await Request.findAll();
     const buddyReqsArray = buddyReqs.map(el => {
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const delReq = await Request.destroy({
         where: {
