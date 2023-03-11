@@ -79,3 +79,42 @@ h1 {
   color: #fff;
 }
 /* -------- End Body Button Config -------- */
+
+
+
+
+
+
+
+/* {{!-- CSS for the table --}}
+
+{{!-- #my-request-table {
+border-collapse: collapse;
+width: 100%;
+} --}}
+
+{{!-- #my-request-table td, #my-request-table th {
+border: 1px solid #ddd;
+padding: 8px;
+} --}}
+
+{{!-- #my-request-table tr:nth-child(even){background-color: #f2f2f2;}--}}
+
+{{!-- #my-request-table tr:hover {background-color: #ddd;} --}}
+
+{{!-- #my-request-table th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: bg-dark;
+color: white; -- ** Should we make it red ?
+} --}}
+
+
+{{!-- Delete Row function J.S --}}
+
+{{!-- function DeleteRow() {
+var td = event.target.parentNode;
+var tr = td.parentNode;
+tr.parentNode.removeChild(tr);
+} --}} */
