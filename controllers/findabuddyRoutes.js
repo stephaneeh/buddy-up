@@ -42,22 +42,24 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-// WORKING! returning data correctly. 
+// WORKING! returning data correctly.
 // DESCRIPTION: Creating a new find a buddy request
 router.post("/", withAuth, async (req, res) => {
-    try {
+  try {
     console.log("hello - in second get findabuddyRoutes.js");
     const newBuddyReq = await Request.findAll({
       where: {
         game_id: req.body.game,
         console_id: req.body.consoledb,
       },
-      include: [{
-        model: Game,
-      },
-      {
-        model: User,
-      }],
+      include: [
+        {
+          model: Game,
+        },
+        {
+          model: User,
+        },
+      ],
     });
 
     console.log(newBuddyReq);
