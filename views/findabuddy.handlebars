@@ -18,8 +18,8 @@
           {{/each}}
         </select>      
       </div>
-      <hr>
-      <div class="form-group">
+      {{!-- <hr> --}}
+      <div class="form-group m-3">
         <button class="btn btn-secondary" type="submit" id="submit">Find me a buddy</button>
       </div>
     </form>
@@ -31,7 +31,7 @@
 {{!-- Find a Buddy Results --}}
 <div class=" col col-md-12" id="findabuddy-results">
   {{!-- Current Blog Posts (if there are any created)--}}
-  {{!-- {{#if requests.length}} --}}
+  {{#if request.length}} {{!-- FIXME: If the #if is live, nothing is visible. When removed, only the else is visible. --}}
     <div class="col-md-6 buddy-list">
       <h3>Current Results:</h3>
       <section class="container">
@@ -46,7 +46,7 @@
         {{/each}}
       </section>
     </div>
-  {{!-- {{/if}} --}}
+  {{/if}}
 </div>
 
 
