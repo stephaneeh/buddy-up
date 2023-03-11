@@ -23,7 +23,7 @@ const submitBtnHandler = async (event) => {
     if (response.ok) {
       console.log("response ok");
       // console.log(response);
-      document.location.reload;
+      document.location.reload; //not sure reload is the best solution. 
     } else {
       alert("Failed to find any buddies for this time.");
     }
