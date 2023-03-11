@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const withAuth = require("../utils/auth");
-const { Request, Console, Game } = require("../models");
+const { Request, Console, Game, User } = require("../models");
 
 // router.get("/", async (req, res) => {
 //   try {
@@ -19,6 +19,7 @@ const { Request, Console, Game } = require("../models");
 // DESCRIPTION: Route to get to find a buddy - only accessible when logged in
 router.get("/", withAuth, async (req, res) => {
   try {
+    console.log("hello - in first get findabuddyRoutes.js"); //used for debugging
     // Find all console and game data
     const dbGames = await Game.findAll();
     // console.log(dbGames);
@@ -41,14 +42,25 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+// WORKING! returning data correctly. 
 // DESCRIPTION: Creating a new find a buddy request
 router.post("/", withAuth, async (req, res) => {
-  try {
-    const newBuddyReq = await Request.create({
-      game_id: req.session.game,
-      console_id: req.body.console,
-      // date: req.body.dateTime,
+    try {
+    console.log("hello - in second get findabuddyRoutes.js");
+    const newBuddyReq = await Request.findAll({
+      where: {
+        game_id: req.body.game,
+        console_id: req.body.consoledb,
+      },
+      include: [{
+        model: Game,
+      },
+      {
+        model: User,
+      }],
     });
+
+    console.log(newBuddyReq);
 
     res.status(200).json(newBuddyReq);
   } catch (err) {
