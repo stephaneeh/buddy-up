@@ -1,7 +1,6 @@
 {{!-- Find a Buddy Form --}}
 <div class="col-md-6 ">
-    <h2>Find A Buddy</h2>
-
+  <h2>Find A Buddy</h2>
     <form class="form signup-form">
       <div class="form-group">
         <label for="console-signup">Choose the console:</label>
@@ -19,41 +18,37 @@
           {{/each}}
         </select>      
       </div>
-      {{!-- <div class="form-group">
-        <label class="date-time" for="meeting-time">Date and time:</label>
-        <input type="datetime-local" id="meeting-time"
-        name="meeting-time" value="2023-03-07T19:30"
-        min="2023-03-07T00:00" max="2026-03-30T00:00">
-      </div> --}}
       <hr>
       <div class="form-group">
         <button class="btn btn-secondary" type="submit" id="submit">Find me a buddy</button>
       </div>
     </form>
-  </div>
-
-{{!-- Find a Buddy Results --}}
-
-
-<div class="col-md-5 container" id="findabuddy-results">
-{{!-- Current Blog Posts (if there are any created)--}}
-{{#if buddies.length}}
-  <div class="col-md-6 buddy-list">
-    <h3>Current Results:</h3>
-    <section class="container">
-      {{#each buddies as |buddy|}}
-   
-      {{else}}
-        <p>Fill out the form and see who you can buddy up with!</p>
-      {{/each}}
-    </section>
-  </div>
-{{/if}}
-
 </div>
 
+{{!-- Divider --}}
+<hr>
 
-{{!-- F --}}
+{{!-- Find a Buddy Results --}}
+<div class=" col col-md-12" id="findabuddy-results">
+  {{!-- Current Blog Posts (if there are any created)--}}
+  {{!-- {{#if requests.length}} --}}
+    <div class="col-md-6 buddy-list">
+      <h3>Current Results:</h3>
+      <section class="container">
+        {{#each Requests as |r|}}
+          {{r.id}}
+          {{user.user_name}}
+          {{game.name}}
+          {{!-- {{r.game_id}} --}}
+         
+        {{else}}
+          <p>Fill out the form and see who you can buddy up with!</p>
+        {{/each}}
+      </section>
+    </div>
+  {{!-- {{/if}} --}}
+</div>
+
 
 {{!-- script --}}
 <script src="/js/findabuddy.js"></script>
