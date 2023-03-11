@@ -26,17 +26,16 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newReq = await Request.create({
-      username: req.session.username,
-      email: req.session.email,
-      game: req.params.game,
-      date: req.params.date,
-      // console: req.params.console,
+      user_id: req.session.user_id,
+      game_id: req.body.game,
+      console_id: req.body.consoleDB,
+      date: req.body.dateTime,
     });
-
-    res.json("Your Buddy Request has been created");
+    console.log(newReq);
+    res.status(200).json(newReq);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

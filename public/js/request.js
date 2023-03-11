@@ -1,14 +1,17 @@
 const requestBtnHandler = async (event) => {
   event.preventDefault();
 
-  const console = document.querySelector("#console-request").value.trim();
-  const game = document.querySelector("#game-request").value.trim();
-  const dateTime = document.querySelector("#meeting-time").value.trim();
+  const consoleDB = document.querySelector("#console-request").value;
+  console.log(consoleDB);
+  const game = document.querySelector("#game-request").value;
+  console.log(game);
+  const dateTime = document.querySelector("#meeting-time").value;
+  console.log(dateTime);
 
-  if (console && game && dateTime) {
-    const response = await fetch(`/request`, {
+  if (consoleDB && game && dateTime) {
+    const response = await fetch(`/requests`, {
       method: "POST",
-      body: JSON.stringify({ game, console, dateTime }),
+      body: JSON.stringify({ consoleDB, game, dateTime }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -16,8 +19,6 @@ const requestBtnHandler = async (event) => {
 
     if (response.ok) {
       console.log("response ok");
-      // console.log(response);
-      document.location.reload;
     } else {
       alert("Failed to create request - please try again.");
     }
