@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const { Request } = require("../../models");
+const { Request } = require("../models");
 
-router.get("/:game", async (req, res) => {
+
+router.get("/", async (req, res) => {
+  console.log("anything");
   try {
     const buddyReqs = await Request.findAll();
     const buddyReqsArray = buddyReqs.map((el) => {
@@ -9,7 +11,8 @@ router.get("/:game", async (req, res) => {
         return el;
       }
     });
-    return buddyReqsArray;
+    console.log(buddyReqsArray);
+    res.render("myrequests", {buddyReqsArray})
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
