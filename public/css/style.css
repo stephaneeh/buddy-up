@@ -35,22 +35,48 @@ h1 {
 }
 /* -------- End NavBar Config -------- */
 
+/* -------- WelcomeBar Config -------- */
+#welcome-bar {
+  margin: 1rem;
+}
+/* -------- End WelcomeBar Config -------- */
+
 /* -------- Card Config -------- */
 .card {
+  opacity: 1;
   margin: 10px;
+  display: block;
   width: 12rem;
   height: 10rem;
   background-position: center;
-  transition: width 1s;
-  transition-timing-function: ease-in-out;
-}
-
-.card:hover {
-  opacity: 0.5;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
 /* TODO: Add hover effects for card title to show/hide */
+.card-body {
+  transition: .5s ease;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
 
+.card:hover {
+  opacity: 0.3;
+}
+
+.card-body:hover {
+  opacity: 1;
+}
+
+.card-title {
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+  height: 100%;
+}
 
 /* -------- Body Button Config -------- */
 .btn, .darkmode--activited .btn {
