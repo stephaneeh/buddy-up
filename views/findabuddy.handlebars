@@ -1,35 +1,5 @@
-{{!-- Find a Buddy Form --}}
-<div class="col-md-6 ">
-  <h2>Find A Buddy</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="console-signup">Choose the console:</label>
-        <select name="console-signup" class="form-control" id="console-signup">
-          {{#each consoles}}
-          <option value="{{this.id}}">{{this.name}}</option>
-          {{/each}}
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="game-signup">Choose the game:</label>
-        <select name="game-signup" class="form-control" id="game-signup">
-          {{#each games}}
-          <option value="{{this.id}}">{{this.name}}</option>
-          {{/each}}
-        </select>      
-      </div>
-      {{!-- <hr> --}}
-      <div class="form-group m-3">
-        <button class="btn btn-secondary" type="submit" id="submit">Find me a buddy</button>
-      </div>
-    </form>
-</div>
-
-{{!-- Divider --}}
-<hr>
-
 <div class="col-md-12">
-  <h2>Current requests</h2>
+  <h2>View all open requests</h2>
 
   <table id="my-request-table">
     <tr>
@@ -43,10 +13,13 @@
     {{#each requests as |r|}}
     <tr>
 
-      <td>{{game.name}}</td> 
+      <td>{{game.name}}</td>
       <td>{{console.name}}</td>
       <td>{{r.date}}</td>
-      <td>{{user.user_name}}</td>
+      {{!-- <td>{{user.user_name}}</td> --}}
+      <td>
+        <a role="button" class="btn btn-danger float-end" href="/find-a-buddy/{{r.id}}">Get in contact</a>
+      </td>
 
     </tr>
     {{/each}}
@@ -54,13 +27,5 @@
   </table>
 </div>
 
-
-
-
-
-
-
-
 {{!-- script --}}
-<script src="/js/findabuddy.js"></script>
-
+<script type="module" src="/js/findabuddy.js"></script>

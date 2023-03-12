@@ -1,6 +1,3 @@
-console.log("hello - inside findabuddy.js"); //used for debugging
-
-//FIXME: data being sent to handlebars is not clear. Need to confirm this and update handlebars file.
 // DESCRIPTION: ASYNC FNC to create a find a buddy request
 const submitBtnHandler = async (event) => {
   event.preventDefault();
@@ -23,7 +20,7 @@ const submitBtnHandler = async (event) => {
     if (response.ok) {
       console.log("response ok");
       // console.log(response);
-      document.location.reload; //not sure reload is the best solution. 
+      document.location.reload; //not sure reload is the best solution.
     } else {
       alert("Failed to find any buddies for this time.");
     }
@@ -32,9 +29,21 @@ const submitBtnHandler = async (event) => {
   }
 };
 
-// Event Listeners:
+const sendEmailHandler = async (event) => {
+  event.preventDefault();
+  const response = await fetch(`/contact`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};
 
-// document.querySelector(".btn").addEventListener("submit", submitBtnHandler);
+// Event Listeners:
 
 const submitButton = document.querySelector("#submit");
 submitButton.addEventListener("click", submitBtnHandler);
+
+document.querySelectorAll("#contactRequest").forEach((contactButton) => {
+  contactButton.addEventListener("click", sendEmailHandler);
+});
