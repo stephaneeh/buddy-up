@@ -5,7 +5,20 @@ const { Request, Console, Game, User } = require("../models");
 router.get("/", withAuth, async (req, res) => {
   try {
     // Find all requests
-    const dbRequests = await Request.findAll();
+    const dbRequests = await Request.findAll({
+      where: { user_id: req.session.user_id },
+      include: [
+        {
+          model: User,
+        },
+        {
+          model: Game,
+        },
+        {
+          model: Console,
+        },
+      ],
+    });
     const requests = dbRequests.map((request) => request.get({ plain: true }));
 
     const dbGames = await Game.findAll();
