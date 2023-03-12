@@ -1,2 +1,24 @@
 <!-- displaying posts -->
-<h2>{{games.name}}</h2>
+
+
+<div class="container border">
+    <div class="row border">
+        <div class="col-4 border">
+            <div style="background-image: url('{{image}}'); "></div>
+            <p><em>image should go here</em></p>
+        </div>
+        <div class="col-8 border">
+            <div class="row">
+                <h2 class="display-3">{{games.name}}</h2>
+            </div>
+            <div class="row">
+                <p>Are you interested in playing this game with some new friends, select one of our links below to
+                    checkout the requests available or create your own!</p>
+            </div>
+            <div class="row">
+                <a role="button" class="btn btn-danger" id="gameBtn" href="/find-a-buddy">Find Buddy</a>
+                <a role="button" class="btn btn-danger" id="gameBtn" href="/requests">New Request</a>
+            </div>
+        </div>
+    </div>
+</div>
