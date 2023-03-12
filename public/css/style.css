@@ -21,16 +21,31 @@ header a:hover {
 }
 
 .navbar {
-    background-color: var(--main-pink);}
+    background-color: var(--main-pink);
+  
+  }
+
 .darkmode--activated .navbar {
-    background-color: var(--secondary);}
+    background-color: var(--secondary);
+    border-bottom: 1px solid rgb(107 246 223);
+  }
+
 
 h1 {
     font-family:'Courier New', Courier, monospace;
-    color: var(--dark);}
+    color: var(--dark);
+  
+  }
 
 .darkmode--activated h1 {
-    color: var(--main-pink);}
+    color: rgb(107 246 223);
+    text-shadow: 4px 1px 10px rgb(107 246 223);
+    /* text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em rgb(107 246 223) ; */
+  }
+
+.darkmode--activated .btn-nav {
+  color: rgb(107 246 223);
+}
 
 .btn-nav {
   background-color: transparent;
@@ -38,16 +53,18 @@ h1 {
   color: white;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
+  /* text-decoration: none; */
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;    
+  /* transition: all 0.3s ease-in-out;     */
+  text-shadow: 4px 1px 10px rgb(107 246 223);
 }
     
 .btn-nav:hover {
   opacity: 0.3;
   transform: scale(1.1);
+  color: rgb(107 246 223);
 }
 /* -------- End NavBar Config -------- */
 
@@ -56,6 +73,7 @@ h1 {
   position: relative;
   margin: 0.5rem;
   padding: 0;
+  border-radius: 15px;
   border: none;
   width: 12rem;
   height: 12rem;
@@ -63,8 +81,16 @@ h1 {
   transition: width .1s;
 }
 
+.card :hover {
+  outline-color: #6bf6df(317 100% 54%);
+  box-shadow: 0px 0px 45px rgb(107 246 223), 0 0 100px rgb(107 246 223);
+}
+
+
+
 .card-body {
   position: absolute;
+  border-radius: 15px;
   top: 0;
   bottom: 0;
   left: 0;
