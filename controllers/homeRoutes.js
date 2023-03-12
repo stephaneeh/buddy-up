@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const withAuth = require("../utils/auth");
-const { Game } = require("../models");
-
+const { Game, User } = require("../models");
 
 // the withauth middleware checks whether the use is logged in before proceeding
 router.get("/", withAuth, async (req, res) => {
@@ -10,12 +9,27 @@ router.get("/", withAuth, async (req, res) => {
     // console.log(dbGames);
     const games = dbGames.map((game) => game.get({ plain: true }));
 
+    console.log("Before current user");
+
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    console.log(req.session.user_id);
+
+    const user = userData.get({ plain: true });
+
+    console.log("after current user");
+    console.log(req.session.user_id);
+
     res.render("homepage", {
       games,
+      ...user,
       // passing through the users and logged in status to the homepage.handlebars
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

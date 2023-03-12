@@ -4,7 +4,22 @@
     --dark: #000000;
 }
 
+
 /* -------- NavBar Config -------- */
+header a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+header a:hover {
+  color: #6bf6df;
+  text-shadow:0px 0px 30px #6bf6df;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
 .navbar {
     background-color: var(--main-pink);}
 .darkmode--activated .navbar {
@@ -13,6 +28,7 @@
 h1 {
     font-family:'Courier New', Courier, monospace;
     color: var(--dark);}
+
 .darkmode--activated h1 {
     color: var(--main-pink);}
 
@@ -37,20 +53,39 @@ h1 {
 
 /* -------- Card Config -------- */
 .card {
-  margin: 10px;
+  position: relative;
+  margin: 0.5rem;
+  padding: 0;
+  border: none;
   width: 12rem;
-  height: 10rem;
+  height: 12rem;
   background-position: center;
-  transition: width 1s;
-  transition-timing-function: ease-in-out;
+  transition: width .1s;
 }
 
-.card:hover {
-  opacity: 0.5;
+.card-body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: var(--main-pink);
 }
 
-/* TODO: Add hover effects for card title to show/hide */
+.card-body:hover  {
+  opacity: 1;
+  text-decoration: none;
+}
 
+.card-title {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
 
 /* -------- Body Button Config -------- */
 .btn, .darkmode--activited .btn {
