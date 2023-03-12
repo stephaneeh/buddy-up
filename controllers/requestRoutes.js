@@ -55,19 +55,6 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-// router.delete("/:id", async (req, res) => {
-//   try {
-//     const delReq = await Request.destroy({
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-
-//     res.json("Your Buddy Request has been deleted");
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+// TODO: FUTURE: ADD DELETE ROUTE FOR REQUESTS
 
 module.exports = router;

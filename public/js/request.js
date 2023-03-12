@@ -19,6 +19,7 @@ const requestBtnHandler = async (event) => {
 
     if (response.ok) {
       console.log("response ok");
+      document.location.replace("/requests");
     } else {
       alert("Failed to create request - please try again.");
     }

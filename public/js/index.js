@@ -26,24 +26,3 @@ const options = {
 
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
-
-// const get = await fetch ('/api/users/login', {
-//     method: 'POST',
-//     body: JSON.stringify({ email, password }),
-//     headers: { 'Content-Type': 'application/json'},
-// });
-// const response = await fetch ('/api/users/login', {
-//     method: 'POST',
-//     body: JSON.stringify({ email, password }),
-//     headers: { 'Content-Type': 'application/json'},
-// });
-// const response = await fetch ('/api/users/login', {
-//     method: 'POST',
-//     body: JSON.stringify({ email, password }),
-//     headers: { 'Content-Type': 'application/json'},
-// });
-// const response = await fetch ('/api/users/login', {
-//     method: 'POST',
-//     body: JSON.stringify({ email, password }),
-//     headers: { 'Content-Type': 'application/json'},
-// });

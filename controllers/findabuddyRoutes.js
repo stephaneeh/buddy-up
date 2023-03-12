@@ -11,15 +11,12 @@ router.get("/", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          // attributes: ["name"],
         },
         {
           model: Game,
-          // attributes: ["name"],
         },
         {
           model: Console,
-          // attributes: ["name"],
         },
       ],
     });
@@ -71,6 +68,47 @@ router.post("/", withAuth, async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
+  }
+});
+
+// the withauth middleware checks whether the use is logged in before proceeding
+router.get("/:id", withAuth, async (req, res) => {
+  const requestID = req.params.id;
+  try {
+    const dbRequests = await Request.findAll({
+      where: {
+        id: requestID,
+      },
+      include: [
+        {
+          model: User,
+        },
+        {
+          model: Game,
+        },
+        {
+          model: Console,
+        },
+      ],
+    });
+    const requests = dbRequests.map((request) => request.get({ plain: true }));
+
+    const dbGames = await Game.findAll();
+    const games = dbGames.map((game) => game.get({ plain: true }));
+
+    const dbConsole = await Console.findAll();
+    const consoles = dbConsole.map((console) => console.get({ plain: true }));
+
+    res.render("contact", {
+      requests,
+      games,
+      consoles,
+      // passing through the users and logged in status to the homepage.handlebars
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
