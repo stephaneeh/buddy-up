@@ -2,36 +2,39 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const { Request, Console, Game, User } = require("../models");
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const findReq = await Request.findAll();
-//     const findReqArray = findReq.map((el) => {
-//       if (el.game == req.params.game) {
-//         return el;
-//       }
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     request.status(500);
-//   }
-// });
-
 // DESCRIPTION: Route to get to find a buddy - only accessible when logged in
 router.get("/", withAuth, async (req, res) => {
   try {
     console.log("hello - in first get findabuddyRoutes.js"); //used for debugging
-    // Find all console and game data
+
+    const dbRequests = await Request.findAll({
+      include: [
+        {
+          model: User,
+          // attributes: ["name"],
+        },
+        {
+          model: Game,
+          // attributes: ["name"],
+        },
+        {
+          model: Console,
+          // attributes: ["name"],
+        },
+      ],
+    });
+    const requests = dbRequests.map((request) => request.get({ plain: true }));
+
     const dbGames = await Game.findAll();
-    // console.log(dbGames);
     const games = dbGames.map((game) => game.get({ plain: true }));
 
     const dbConsole = await Console.findAll();
-    // console.log(dbConsole);
     const consoles = dbConsole.map((console) => console.get({ plain: true }));
 
     // const user = userData.get({ plain: true });
 
     res.render("findabuddy", {
+      requests,
       games,
       consoles,
       logged_in: true,

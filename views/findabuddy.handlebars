@@ -28,26 +28,37 @@
 {{!-- Divider --}}
 <hr>
 
-{{!-- Find a Buddy Results --}}
-<div class=" col col-md-12" id="findabuddy-results">
-  {{!-- Current Blog Posts (if there are any created)--}}
-  {{#if request.length}} {{!-- FIXME: If the #if is live, nothing is visible. When removed, only the else is visible. --}}
-    <div class="col-md-6 buddy-list">
-      <h3>Current Results:</h3>
-      <section class="container">
-        {{#each Requests as |r|}}
-          {{r.id}}
-          {{user.user_name}}
-          {{game.name}}
-          {{!-- {{r.game_id}} --}}
-         
-        {{else}}
-          <p>Fill out the form and see who you can buddy up with!</p>
-        {{/each}}
-      </section>
-    </div>
-  {{/if}}
+<div class="col-md-12">
+  <h2>Current requests</h2>
+
+  <table id="my-request-table">
+    <tr>
+      <th>Game Name</th>
+      <th>Console</th>
+      <th>Day/Time</th>
+      <th>User ID</th>
+      {{!-- <th>Time</th> --}}
+    </tr>
+    {{#if requests.length}}
+    {{#each requests as |r|}}
+    <tr>
+
+      <td>{{game.name}}</td> 
+      <td>{{console.name}}</td>
+      <td>{{r.date}}</td>
+      <td>{{user.user_name}}</td>
+
+    </tr>
+    {{/each}}
+    {{/if}}
+  </table>
 </div>
+
+
+
+
+
+
 
 
 {{!-- script --}}
