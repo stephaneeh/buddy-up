@@ -21,13 +21,9 @@
                 <p>{{user.user_name}}</p>
             </div>
             <div class="row">
-                <p>{{reviews.stars}}</p>
+                <p>{{ get_stars reviews.stars}}</p>
             </div>
             {{!-- {{else}} --}}
-            <div class="row">
-                <p>There is currently no review for this game. </p>
-                <p>Come back soon to see what people think of this game!</p>
-            </div>
             {{!-- {{/if}} --}}
             <hr>
             <div class="row">
