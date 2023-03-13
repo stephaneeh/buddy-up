@@ -13,7 +13,7 @@
             <div class="row">
                 <h3 class="display-6">Review:</h3>
             </div>
-            {{#if reviews.length}}
+            {{!-- {{#if reviews.length}} --}}
             <div class="row">
                 <p>{{reviews.content}}</p>
             </div>
@@ -21,14 +21,10 @@
                 <p>{{user.user_name}}</p>
             </div>
             <div class="row">
-                <p>{{reviews.stars}}</p>
+                <p>{{ get_stars reviews.stars}}</p>
             </div>
-            {{else}}
-            <div class="row">
-                <p>There is currently no review for this game. </p>
-                <p>Come back soon to see what people think of this game!</p>
-            </div>
-            {{/if}}
+            {{!-- {{else}} --}}
+            {{!-- {{/if}} --}}
             <hr>
             <div class="row">
                 <p>Are you interested in playing this game with some new friends? Select one of our links below to

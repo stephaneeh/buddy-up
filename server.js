@@ -36,11 +36,12 @@ app.use(session(sess));
 
 app.engine(
   "handlebars",
-  exphbs({
-    defaultLayout: "main",
-    // ...implement newly added insecure prototype access
-    handlebars: allowInsecurePrototypeAccess(Handlebars),
-  })
+  // exphbs({
+  //   defaultLayout: "main",
+  //   // ...implement newly added insecure prototype access
+  //   handlebars: allowInsecurePrototypeAccess(Handlebars),
+  // })
+  hbs.engine
 );
 app.set("view engine", "handlebars");
 
