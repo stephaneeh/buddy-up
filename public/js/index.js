@@ -3,12 +3,12 @@ async function getGames() {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
-  console.log(getGames);
+  // console.log(getGames); //used for debugging
 }
 
 getGames();
 
-console.log("im working");
+// console.log("im working"); //used for debugging
 
 const options = {
   bottom: "64px", // default: '32px'

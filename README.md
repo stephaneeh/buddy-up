@@ -54,9 +54,17 @@ https://www.npmjs.com/package/axios
 
 https://www.npmjs.com/package/darkmode-js
 
+
+
 ## Resources
 
 FIXME: add any resources used.
+
+https://stackoverflow.com/questions/47300408/handlebars-expecting-open-inverse-chain-inverse-open-endblock-got-eo
+
+https://codedamn.com/news/javascript/fix-require-is-not-defined
+
+
 
 ## License
 
