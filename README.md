@@ -14,6 +14,8 @@ Meeting platform for users who want to meet up with others for activities
 
 ---
 
+![Buddy Up home page - light theme](public/assets/img/Buddy%20up%20home%20narrow.png)![Buddy Up home page - dark theme](public/assets/img/buddy%20up%20narrow%20-%20dark.png)
+
 ## About
 
 Want to play your favourite game but don't have anyone to play with? We have been there but didn't want to stay there, so we made Buddy Up! Let us help you find your next buddy.
@@ -28,11 +30,11 @@ Not a gamer? No Problems! We are looking at developing buddy up for people wanti
 
 Please follow the link below to see the deployed app:
 
-FIXME: Add deployed link.
+https://buddy-up-project.herokuapp.com
 
 ## Wire Frame
 
-FIXME: add wire frame imgs
+![This image shows our initital wire frames for the app](public/assets/img/buddy%20up%20-%20wire%20frame.png)
 
 ## Future Developments
 
@@ -42,29 +44,22 @@ You have come to Buddy Up as we have started - welcome to the party! We have lot
 2. We want to add the ability to locate who you are Buddying Up with. That way, you can meet and play
 3. We want you to be able to add your own game/activity, so that you can do what you want to do!
 
-## Credits
-
-FIXME: confirm all are correct and used.
-
-Without these npm packages, Buddy Up would not be able t be what it is. So thank you!
-
+Future Development research:
 https://www.npmjs.com/package/nodemailer
 
 https://www.npmjs.com/package/axios
 
+## Credits
+
+Without these npm packages, Buddy Up would not be what it is. So thank you!
+
 https://www.npmjs.com/package/darkmode-js
 
-
-
 ## Resources
-
-FIXME: add any resources used.
 
 https://stackoverflow.com/questions/47300408/handlebars-expecting-open-inverse-chain-inverse-open-endblock-got-eo
 
 https://codedamn.com/news/javascript/fix-require-is-not-defined
-
-
 
 ## License
 
