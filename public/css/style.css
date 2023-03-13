@@ -1,5 +1,6 @@
 :root {
     --main-pink: #f6042c;
+    --main-blue: #6bf6df;
     --secondary: #070605;
     --dark: #000000;
 }
@@ -8,21 +9,18 @@
 /* -------- NavBar Config -------- */
 header a {
   text-decoration: none;
-  color: var(--black);
+  color: white;
 }
 
 header a:hover {
-  color: #6bf6df;
-  text-shadow:0px 0px 30px #6bf6df;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  -webkit-transition: all 0.1s ease-in;
+  color: var(--main-blue);
+  text-shadow: 0px 0px 50px white;
   transition: all 0.1s ease-in;
+  transform: scale(1.3);
 }
 
 .navbar {
     background-color: var(--main-pink);
-  
   }
 
 .darkmode--activated .navbar {
@@ -30,17 +28,14 @@ header a:hover {
     border-bottom: 1px solid rgb(107 246 223);
   }
 
-
 h1 {
     font-family:'Courier New', Courier, monospace;
     color: var(--dark);
-  
   }
 
 .darkmode--activated h1 {
     color: rgb(107 246 223);
     text-shadow: 4px 1px 10px rgb(107 246 223);
-    /* text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em rgb(107 246 223) ; */
   }
 
 .darkmode--activated .btn-nav {
@@ -53,11 +48,9 @@ h1 {
   color: white;
   padding: 15px 32px;
   text-align: center;
-  /* text-decoration: none; */
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  /* transition: all 0.3s ease-in-out;     */
   text-shadow: 4px 1px 10px rgb(107 246 223);
 }
     
@@ -81,12 +74,15 @@ h1 {
   transition: width .1s;
 }
 
-.card :hover {
-  outline-color: #6bf6df(317 100% 54%);
-  box-shadow: 0px 0px 45px rgb(107 246 223), 0 0 100px rgb(107 246 223);
+.card:hover {
+  outline-color: var(--main-pink)(317 100% 54%);
+  box-shadow: 0px 0px 45px rgb(246, 4, 44), 0 0 100px rgb(246, 4, 44);
 }
 
-
+.darkmode--activated .card:hover {
+  outline-color: var(--main-blue)(317 100% 54%);
+  box-shadow: 0px 0px 45px rgb(107 246 223), 0 0 100px rgb(107 246 223);
+}
 
 .card-body {
   position: absolute;
@@ -102,6 +98,21 @@ h1 {
   background-color: var(--main-pink);
 }
 
+.darkmode--activated .card-body {
+  position: absolute;
+  border-radius: 15px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: var(--main-blue);
+}
+
+
 .card-body:hover  {
   opacity: 1;
   text-decoration: none;
@@ -109,6 +120,12 @@ h1 {
 
 .card-title {
   color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.darkmode--activated .card-title {
+  color: black;
   text-align: center;
   text-decoration: none;
 }
@@ -141,41 +158,19 @@ h1 {
 }
 /* -------- End Body Button Config -------- */
 
+/* -------- gameBtn Config -------- */
+#gameBtn {
+  width: 25%;
+}
+
+/* -------- gameBtn Config -------- */
+
+/* -------- Form Config -------- */
+.form-group,
+#welcome-bar {
+  padding-bottom: 10px;
+}
+
+/* -------- End Form Config -------- */
 
 
-
-
-
-
-/* {{!-- CSS for the table --}}
-
-{{!-- #my-request-table {
-border-collapse: collapse;
-width: 100%;
-} --}}
-
-{{!-- #my-request-table td, #my-request-table th {
-border: 1px solid #ddd;
-padding: 8px;
-} --}}
-
-{{!-- #my-request-table tr:nth-child(even){background-color: #f2f2f2;}--}}
-
-{{!-- #my-request-table tr:hover {background-color: #ddd;} --}}
-
-{{!-- #my-request-table th {
-padding-top: 12px;
-padding-bottom: 12px;
-text-align: left;
-background-color: bg-dark;
-color: white; -- ** Should we make it red ?
-} --}}
-
-
-{{!-- Delete Row function J.S --}}
-
-{{!-- function DeleteRow() {
-var td = event.target.parentNode;
-var tr = td.parentNode;
-tr.parentNode.removeChild(tr);
-} --}} */

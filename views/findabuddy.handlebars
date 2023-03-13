@@ -1,12 +1,14 @@
-<div class="col-md-12">
-  <h2>View all open requests</h2>
+<h2 class="display-3">Find a buddy</h2>
+<p class="lead">Check out the requests below to find a new buddy </p>
 
-  <table id="my-request-table">
+<div class="col-md-12">
+
+  <table id="my-request-table" class="table">
     <tr>
       <th>Game Name</th>
       <th>Console</th>
       <th>Day/Time</th>
-      <th>User ID</th>
+      <th>Reach Out</th>
       {{!-- <th>Time</th> --}}
     </tr>
     {{#if requests.length}}
@@ -18,7 +20,7 @@
       <td>{{r.date}}</td>
       {{!-- <td>{{user.user_name}}</td> --}}
       <td>
-        <a role="button" class="btn btn-danger float-end" href="/find-a-buddy/{{r.id}}">Get in contact</a>
+        <a role="button" class="btn btn-danger" href="/find-a-buddy/{{r.id}}">Get in contact</a>
       </td>
 
     </tr>
