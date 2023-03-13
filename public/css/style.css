@@ -71,7 +71,6 @@ h1 {
   width: 12rem;
   height: 12rem;
   background-position: center;
-  transition: width .1s;
 }
 
 .card:hover {
@@ -129,6 +128,13 @@ h1 {
   text-align: center;
   text-decoration: none;
 }
+
+.game-image {
+  position: relative;
+  background-position: center;
+  transition: width .1s;
+}
+
 
 /* -------- Body Button Config -------- */
 .btn, .darkmode--activited .btn {

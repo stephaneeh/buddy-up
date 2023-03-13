@@ -28,8 +28,6 @@ router.get("/", withAuth, async (req, res) => {
     const dbConsole = await Console.findAll();
     const consoles = dbConsole.map((console) => console.get({ plain: true }));
 
-    // const user = userData.get({ plain: true });
-
     res.render("findabuddy", {
       requests,
       games,
@@ -42,7 +40,6 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-// WORKING! returning data correctly.
 // DESCRIPTION: Creating a new find a buddy request
 router.post("/", withAuth, async (req, res) => {
   try {
