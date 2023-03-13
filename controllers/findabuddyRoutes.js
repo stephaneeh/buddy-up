@@ -112,4 +112,39 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
+// DESCRIPTION: Creating a new find a contact request
+router.get("/:id", withAuth, async (req, res) => {
+  const requestID = req.params.id;
+  try {
+    const dbRequests = await Request.findAll({
+      where: {
+        id: requestID,
+      },
+      include: [
+        {
+          model: User,
+        },
+        {
+          model: Game,
+        },
+        {
+          model: Console,
+        },
+      ],
+    });
+    const requests = dbRequests.map((request) => request.get({ plain: true }));
+
+    const dbGames = await Game.findAll();
+    const games = dbGames.map((game) => game.get({ plain: true }));
+
+    const dbConsole = await Console.findAll();
+    const consoles = dbConsole.map((console) => console.get({ plain: true }));
+
+    res.status(200).json(requests, games, consoles);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
