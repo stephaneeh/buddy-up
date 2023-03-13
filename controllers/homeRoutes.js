@@ -6,7 +6,6 @@ const { Game, User } = require("../models");
 router.get("/", withAuth, async (req, res) => {
   try {
     const dbGames = await Game.findAll();
-    // console.log(dbGames);
     const games = dbGames.map((game) => game.get({ plain: true }));
 
     console.log("Before current user");
@@ -15,12 +14,7 @@ router.get("/", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
     });
 
-    console.log(req.session.user_id);
-
     const user = userData.get({ plain: true });
-
-    console.log("after current user");
-    console.log(req.session.user_id);
 
     res.render("homepage", {
       games,
