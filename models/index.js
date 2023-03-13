@@ -1,9 +1,9 @@
 const User = require("./user");
-const Game = require("./Game");
-const Genre = require("./Genre");
-const Request = require("./Request");
-const Console = require("./Console");
-const Review = require("./Review");
+const Game = require("./game");
+const Genre = require("./genre");
+const Request = require("./request");
+const Console = require("./console");
+const Review = require("./review");
 
 User.belongsTo(Game, {
   foreignKey: "game_id",
