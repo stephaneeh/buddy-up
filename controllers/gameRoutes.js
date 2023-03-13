@@ -20,7 +20,7 @@ router.get("/:id", withAuth, async (req, res) => {
       },
       include: { model: User, attributes: { exclude: ["password"] } },
     });
-    // const reviews = dbReviews.get({ plain: true });
+    const reviews = dbReviews.get({ plain: true });
 
     console.log("GAMES:");
     console.log(games);
@@ -29,7 +29,7 @@ router.get("/:id", withAuth, async (req, res) => {
 
     res.render("game", {
       games,
-      // reviews,
+      reviews,
       // passing through the users and logged in status to the homepage.handlebars
       logged_in: req.session.logged_in,
     });

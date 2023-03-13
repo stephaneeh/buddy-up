@@ -13,4 +13,9 @@
 //     }`;
 // }
 
+// get_stars: (stars) => {
+//     const numStars = parseInt(stars);
+
+// }
+
 
