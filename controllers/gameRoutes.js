@@ -13,25 +13,28 @@ router.get("/:id", withAuth, async (req, res) => {
       },
     });
     const games = dbGames.get({ plain: true });
-    
+
     const dbReviews = await Review.findOne({
       where: {
         game_id: gameID,
       },
-      include: {model: User}
+      include: { model: User, attributes: { exclude: ["password"] } },
     });
-    const reviews = dbReviews.get({ plain: true });
+    // const reviews = dbReviews.get({ plain: true });
 
+    console.log("GAMES:");
+    console.log(games);
     console.log("REVIEWS:");
-    console.log(reviews);
+    // console.log(reviews);
 
     res.render("game", {
       games,
-      reviews,
+      // reviews,
       // passing through the users and logged in status to the homepage.handlebars
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
