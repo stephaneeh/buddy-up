@@ -6,6 +6,7 @@ const Handlebars = require("handlebars");
 const routes = require("./controllers");
 const helpers = require("./utils/helpers");
 
+// importing connection.
 const sequelize = require("./config/connection");
 
 // stores the session state in sql database
